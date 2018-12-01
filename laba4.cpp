@@ -115,7 +115,30 @@ int process2(int **mas, int a, int b) {
 	}
 	return result;
 }
+void printProcess(int check, int choice, float srbal, int studs, int number)
+{
+	switch (check) {
+	case 0:
+		cout << "Вы не ввели массив." << endl;
+		system("pause");
+		system("cls");
+		break;
 
+	case 1:
+		cout << "Вы не обработали массив." << endl;
+		system("pause");
+		system("cls");
+		
+		break;
+	case 2:
+		if (choice == 1) cout << "Cреднйи бал " << number << "-ого ученика равен:" << srbal << endl;
+		else if (choice == 2) cout << "Количество студентов без троек равно: " << studs << endl;
+		system("pause");
+		system("cls");
+		check = 1;
+		
+	}
+}
 int main() {                                  ////////////////////////////////////////////////////////////////////////////////////
 	setlocale(LC_ALL, "RUS");
 
@@ -222,29 +245,7 @@ int main() {                                  //////////////////////////////////
 
 			case 3:
 				system("cls");//////////////////////////////////////////////////////////////
-				switch (check) {
-				case 0:
-					cout << "Вы не ввели массив." << endl;
-					system("pause");
-					system("cls");
-					error = 0;
-					break;
-
-				case 1:
-					cout << "Вы не обработали массив." << endl;
-					system("pause");
-					system("cls");
-					error = 0;
-					break;
-				case 2:
-					if (choice == 1) cout << "Cреднйи бал " << number << "-ого ученика равен:" << srbal << endl;
-					else if (choice == 2) cout << "Количество студентов без троек равно: " << studs << endl;
-					system("pause");
-					system("cls");
-					error = 0;
-					check = 1;
-					break;
-				}
+				printProcess(check, choice, srbal, studs, number);
 				break;
 
 
